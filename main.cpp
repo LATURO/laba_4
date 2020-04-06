@@ -224,26 +224,5 @@ int main(){
 	{
 		cout<<"Итераторы не равны"<<endl;
 	}
-	cout<<"Демонстрирование работы итератора при удаление элементов вектора."<<endl;
-	Vector<int> f;
-	f.add(6);
-	f.add(0);
-	f.add(3);
-	f.add(7);
-	f.add(10);
-	cout<<f;
-	Iterator<int,Vector<int> > it3 = f.CreateIterator();
-	for (; it3.current() <=it3.end() ; it3++)
-	{
-		cout<<*it3<<endl;
-	}	
-	f.erase(2);
-	f.erase(3);
-	it3.reset();
-	cout<<"Вектор после удаления."<<endl;
-	for (; it3.current() <=it3.end() ; it3++)
-	{
-		cout<<*it3<<endl;
-	}
 	return 0;
 }
