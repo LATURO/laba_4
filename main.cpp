@@ -8,14 +8,14 @@ class Iterator
 public:
 
 	Iterator(U *v):vec(v){
-		index = this->vec->begin();//установка курсора на начало
+		index = this->vec->beginel();//установка курсора на начало
 	}
 	D* begin(){
-	 return this->vec->begin();
+	 return this->vec->beginel();
 	}
 	D* end(){
 
-	 return this->vec->end();
+	 return this->vec->endel();
 	}
 	D* current()const { 
 		return index;
@@ -55,7 +55,7 @@ public:
         return (index!=right.index);
     }
     void reset(){
- 		index = this->vec->begin();   	
+ 		index = this->vec->beginel();   	
     }
 };
 template <typename T>
@@ -139,11 +139,19 @@ public:
     		cout<<"Index is not in array"<<endl;//вывод если индекс вне массива
     	}
     }
-    T* begin(){
+    T* beginel(){
     	return this->array;
     }
-    T* end(){
+    T* endel(){
     	return this->array+pos-1;
+    }
+    T* begin(){
+    	Iterator<T,Vector<T> > a = CreateIterator();
+    	return a.begin();
+    }
+    T* end(){
+    	Iterator<T,Vector<T> > a = CreateIterator();
+    	return a.end();
     }
 	~Vector(){
 		if (!empty())
