@@ -4,11 +4,11 @@ template <typename D,class U>
 class Iterator
 {
 	U *vec;
-	D *index;
+	D *index;//курсор
 public:
 
 	Iterator(U *v):vec(v){
-		index = this->vec->begin();
+		index = this->vec->begin();//установка курсора на начало
 	}
 	D* begin(){
 	 return this->vec->begin();
